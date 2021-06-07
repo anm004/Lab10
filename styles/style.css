@@ -14,9 +14,11 @@ body {
   width: 100%;
 }
 
+
 body entry-page {
   display: none;
 }
+
 
 header {
   background-color: #D9D281;
@@ -156,3 +158,13 @@ body.single-entry main {
   width: 100%;
 }
 /* Feature Flag End - Double Column */
+
+
+.scndSplit {
+  display: grid;
+  grid-column-gap: 75px;
+  grid-row-gap: 75px;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  width: 1200px;
+}

@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYK3BTS3N2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -12,7 +12,6 @@
 
   gtag('config', 'G-ZYK3BTS3N2');
 </script>
-
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,6 +32,7 @@
   </header>
 
   <main class="double-column"></main>
+  <main class="scndSplit"></main>
 
   <entry-page></entry-page>
   <!-- split script source-->
@@ -46,10 +46,7 @@
       // the user belongs to. 
       // This coudld also be a cookie you generate
       // for anonymous users
-      key: Math.random().toString(36).substring(7),
-      // an OPTIONAL traffic type, if provided will be
-      // used for event tracking with the SDK client.
-      trafficType: 'A_TRAFFIC_TYPE'
+      key: Math.random().toString(36).substring(7)
     }
   });
   // And get the client instance you'll use
@@ -57,13 +54,14 @@
 
   //when split on or off make changes
   client.on(client.Event.SDK_READY, function() {
-  var treatment = client.getTreatment("double_column");
+  var treatment = client.getTreatment("secondSplit");
+  console.log(treatment);
   if (treatment == "on") {
       // insert code here to show on treatment
-      document.querySelector("main").className = 'double-column';
+      document.querySelector("main").className = 'scndSplit';
   } else if (treatment == "off") {
       // insert code here to show off treatment
-      document.querySelector("main").className = "";
+      document.querySelector("main").className = "double-column";
   } 
 });
 
